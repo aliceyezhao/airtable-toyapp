@@ -9,3 +9,5 @@ Playing around with Airtable as a backend and React Native as a frontend. The Ai
 
 
 scan QR code with smartphone in Expo app
+
+Referenced this article: https://upmostly.com/tutorials/create-simple-web-app-react-airtable
