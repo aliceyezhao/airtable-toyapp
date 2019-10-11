@@ -18,13 +18,13 @@ export default class App extends Component<Props, State> {
   }
 
   componentDidMount() {
-    fetch('https://api.airtable.com/v0/appLhYbwWFbNm1P58/Test?api_key=keyPAZ4KvgztKf5Kv')
-    .then((resp) => resp.json())
-    .then(data => {
-       this.setState({ records: data.records });
-    }).catch(err => {
-      // Error :(
-    });
+    fetch('https://api.airtable.com/v0/AIRTABLE_LINK/Test?api_key=YOUR_AIRTABLE_API_KEY')
+      .then((resp) => resp.json())
+      .then(data => {
+        this.setState({ records: data.records });
+      }).catch(err => {
+        // Error :(
+      });
   }
 
 
@@ -33,18 +33,18 @@ export default class App extends Component<Props, State> {
       <View style={styles.container}>
         <Text>Open up App.tsx to start working on your app!</Text>
         <Text>Taken from Airtable</Text>
-        {this.state.records.map(record => <Card key={record.id} {...record.fields} /> )}
+        {this.state.records.map(record => <Card key={record.id} {...record.fields} />)}
       </View>
     );
-  } 
+  }
 }
 
 const Card = ({ name, boolean, imageURL }) => (
   <View>
-    <Image source={{uri: imageURL[0].url}}
-           style={{width: 100, height: 100}}/>
+    <Image source={{ uri: imageURL[0].url }}
+      style={{ width: 100, height: 100 }} />
     <Text>{boolean ? name : 'false'}</Text>
-  </View> 
+  </View>
 );
 
 const styles = StyleSheet.create({
